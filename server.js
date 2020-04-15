@@ -12,6 +12,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 app.use("/", require("./routes/htmlroutes"));
+app.use("/user", require("./routes/createuserroute"));
+app.get('/test', (req, res) => res.send('hi!'));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
